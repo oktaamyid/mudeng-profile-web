@@ -1,0 +1,24 @@
+@import "tailwindcss";
+@import "@fontsource/anton/400.css";
+@import "@fontsource/plus-jakarta-sans/400.css";
+@import "@fontsource/plus-jakarta-sans/500.css";
+@import "@fontsource/plus-jakarta-sans/600.css";
+@import "@fontsource/plus-jakarta-sans/700.css";
+
+@theme {
+  --font-anton: "Anton", sans-serif;
+  --font-jakarta: "Plus Jakarta Sans", sans-serif;
+  --color-primary: #4F37B3;
+  --color-primary-light: #6849E1;
+  --color-primary-dark: #3A2A85;
+  --color-accent: #E9E2FF;
+  --color-dark: #1a1a2e;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-jakarta);
+}
