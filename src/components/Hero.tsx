@@ -31,7 +31,7 @@ export default function Hero() {
     <section
       ref={sectionRef}
       id="home"
-      className="relative h-screen pb-50 overflow-hidden"
+      className="relative min-h-[100svh] pb-16 md:h-screen md:pb-50 overflow-hidden"
     >
       <div
         className="absolute inset-0 pointer-events-none z-0"
@@ -78,22 +78,23 @@ export default function Hero() {
       </div>
 
       {/* CONTENT — slight parallax down */}
-      <motion.div className="absolute inset-0 flex items-center justify-center" style={{ y: contentY }}>
-        <div className="text-center px-4 sm:px-6 max-w-[920px] mx-auto mt-[-10%] md:mt-[-3%]">
+      <motion.div className="absolute inset-y-0 left-0 w-screen max-w-[100vw] flex items-center justify-center overflow-hidden" style={{ y: contentY }}>
+        <div className="w-full text-center px-5 sm:px-6 max-w-[920px] mx-auto mt-0 md:mt-[-3%]">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="font-anton text-[38px] sm:text-[48px] md:text-[64px] leading-[1.15] text-[#6667E4] uppercase mb-4 md:mb-6"
+            className="font-anton text-[34px] sm:text-[46px] md:text-[64px] leading-[1.12] sm:leading-[1.15] text-[#6667E4] uppercase mb-4 md:mb-6"
             style={{ textShadow: "0 1px 1px rgba(0,0,0,0.05)" }}
           >
-            MULTIMEDIA<br />DIGITAL ENGAGEMENT 2026
+            <span className="md:hidden">MULTIMEDIA<br />DIGITAL ENGAGEMENT<br />2026</span>
+            <span className="hidden md:inline">MULTIMEDIA<br />DIGITAL ENGAGEMENT 2026</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
-            className="text-[#424345] text-[14px] sm:text-[15px] md:text-[17px] leading-[1.6] max-w-[800px] mx-auto mb-6 md:mb-8"
+            className="text-[#424345] text-[14px] sm:text-[15px] md:text-[17px] leading-[1.6] max-w-[340px] sm:max-w-[560px] md:max-w-[800px] mx-auto mb-6 md:mb-8"
           >
             Multimedia Digital Engagement (MUDENG) adalah suatu komunitas dan juga salah satu platform pembelajaran kreatif di Sekolah Tinggi Teknologi Terpadu Nurul Fikri, yang ditujukan untuk memfasilitasi mahasiswa dalam mempelajari ilmu kreatif serta mengatasi kesulitan belajar disiplin kreatif secara mandiri.
           </motion.p>

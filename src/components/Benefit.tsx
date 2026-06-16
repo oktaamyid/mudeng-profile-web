@@ -28,17 +28,17 @@ const benefits = [
 export default function Benefit() {
   return (
     <section
-      className="relative py-32 bg-white"
+      className="relative py-20 md:py-32 bg-white"
     >
       {/* Background: gradient mesh blob + grid combined (single asset) */}
       <img
         src={benefitBg}
         alt=""
-        className="absolute pointer-events-none"
-        style={{ left: "50%", top: "55%", transform: "translate(-50%, -50%)", width: "75%", height: "auto"}}
+        className="absolute pointer-events-none w-[115%] md:w-[75%]"
+        style={{ left: "50%", top: "55%", transform: "translate(-50%, -50%)", height: "auto"}}
       />
 
-      <div className="max-w-[1200px] mx-auto px-6 relative z-10">
+      <div className="max-w-[1200px] mx-auto px-5 sm:px-6 relative z-10">
         {/* Section Header */}
         <FadeInUp>
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-8 md:mb-16">
@@ -61,11 +61,11 @@ export default function Benefit() {
         </FadeInUp>
 
         {/* Benefit Cards — glass effect */}
-        <StaggerContainer className="grid md:grid-cols-3 gap-6" staggerDelay={0.15}>
+        <StaggerContainer className="grid md:grid-cols-3 gap-4 md:gap-6" staggerDelay={0.15}>
           {benefits.map((benefit, i) => (
             <StaggerItem key={i}>
             <div
-              className="relative rounded-2xl p-8 text-center overflow-visible"
+              className="relative rounded-2xl p-6 md:p-8 text-center overflow-visible"
               style={{
                 background: "rgba(255,255,255,0.1)",
                 backdropFilter: "blur(16px)",
@@ -79,7 +79,7 @@ export default function Benefit() {
                 <img
                   src={benefit.icon}
                   alt={benefit.title}
-                  className="w-[100px] h-[100px] drop-shadow-lg"
+                  className="w-[84px] h-[84px] md:w-[100px] md:h-[100px] drop-shadow-lg"
                 />
               </div>
 

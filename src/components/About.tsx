@@ -15,8 +15,8 @@ const misiItems = [
 
 export default function About() {
   return (
-    <section id="about" className="relative py-32 mt-16">
-      <div className="max-w-[1200px] mx-auto px-6 relative z-10">
+    <section id="about" className="relative py-20 md:py-32 mt-6 md:mt-16">
+      <div className="max-w-[1200px] mx-auto px-5 sm:px-6 relative z-10">
         {/* Section Header */}
         <FadeInUp>
           <div className="flex items-center justify-between mb-8 md:mb-12">
@@ -34,7 +34,7 @@ export default function About() {
 
         {/* Cover Card */}
         <FadeInUp delay={0.2}>
-          <div className="relative rounded-2xl p-6 md:p-12 overflow-visible">
+          <div className="relative rounded-2xl p-5 sm:p-6 md:p-12 overflow-visible">
             {/* Glass backdrop */}
             <div
               className="absolute inset-0 rounded-2xl -z-1"
@@ -56,7 +56,7 @@ export default function About() {
               <img src={star30} alt="" className="absolute" style={{ left: "48%", bottom: "0%", width: "18px", height: "auto" }} />
             </Parallax>
 
-            <div className="relative z-10 flex flex-col md:flex-row gap-8 md:gap-12 items-center">
+            <div className="relative z-10 flex flex-col md:flex-row gap-6 md:gap-12 items-center">
               {/* Left: Visi & Misi */}
               <div className="flex-1">
                 <SlideIn direction="left">
@@ -70,12 +70,12 @@ export default function About() {
                 <SlideIn direction="left" delay={0.2}>
                   <h3 className="font-anton text-[28px] md:text-[36px] text-primary uppercase mb-4">MISI</h3>
                 </SlideIn>
-                <StaggerContainer className="space-y-4" staggerDelay={0.1}>
+                <StaggerContainer className="space-y-3 md:space-y-4" staggerDelay={0.1}>
                   {misiItems.map((item, i) => (
                     <StaggerItem key={i}>
                       <li className="flex gap-3 items-start list-none">
                         <span className="text-[#6667E4] mt-1.5 text-sm">›</span>
-                        <p className="text-gray-700 text-base leading-relaxed">{item}</p>
+                        <p className="text-gray-700 text-[14px] md:text-base leading-relaxed">{item}</p>
                       </li>
                     </StaggerItem>
                   ))}
@@ -83,7 +83,7 @@ export default function About() {
               </div>
 
               {/* Right: MUDENG Card */}
-              <SlideIn direction="right" delay={0.3} className="shrink-0 w-[280px] md:w-[340px]">
+              <SlideIn direction="right" delay={0.3} className="shrink-0 w-[240px] sm:w-[280px] md:w-[340px]">
                 <img src={mudengCard} alt="MUDENG Card" className="w-full h-auto rotate-[5deg] drop-shadow-2xl" />
               </SlideIn>
             </div>
@@ -91,7 +91,7 @@ export default function About() {
         </FadeInUp>
       </div>
 
-      <div className="max-w-[600px] mx-auto mt-16">
+      <div className="max-w-[600px] mx-5 sm:mx-auto mt-10 md:mt-16">
         <div className="h-px bg-accent" />
       </div>
     </section>

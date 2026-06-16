@@ -1,8 +1,8 @@
 import { ArrowRight } from "lucide-react";
 import { FadeInUp, StaggerContainer, StaggerItem } from "./motion";
-import eventUiux from "../assets/events/event-uiux.png";
-import eventGraphic from "../assets/events/event-graphic-design.png";
-import eventMotion from "../assets/events/event-motion-graphic.png";
+import eventUICraft from "../assets/events/event-uicraft.png";
+import eventCrreativeCraft from "../assets/events/event-creativecraft.png";
+import eventMucrex from "../assets/events/event-mucrex.png";
 import { useState } from "react";
 import EventPopup, { type EventDetailData } from "./EventPopup";
 
@@ -10,7 +10,7 @@ const events = [
   {
     title: "Creative Labs UIUX Design",
     description: "Program hybrid yang terbuka untuk umum, dirancang untuk mempelajari UI/UX secara teori maupun praktik.",
-    image: eventUiux,
+    image: eventUICraft,
     details: {
       title: "EVENT UI CRAFT",
       schedules: [
@@ -20,13 +20,13 @@ const events = [
         { date: "Minggu, 5 Juli 2026 (offline)", location: "Kampus" },
       ],
       fullDescription: "UI/UX Design (UICraft) merupakan program pelatihan hybrid (online dan offline) yang terbuka hanya untuk internal STTNF, menggabungkan pembelajaran teori dan praktik dengan teknologi terkini. Kegiatan ini dirancang khusus sebagai inkubasi dan pelatihan intensif untuk mempersiapkan peserta menuju kompetisi nasional GEMASTIK. Fokus pembelajaran dimulai dari riset pengguna, penyusunan berkas UX, pembuatan wireframe, hingga hasil akhir berupa high-fidelity prototype aplikasi atau website yang memenuhi standar kompetisi nasional. Selain meningkatkan kreativitas dan kemampuan teknis, peserta juga dibekali dengan strategi penyusunan proposal dan presentasi produk yang kompetitif.",
-      gallery: [eventUiux, eventUiux]
+      gallery: [eventUICraft, eventUICraft]
     }
   },
   {
     title: "Creative Labs Graphic Design",
     description: "Acara hybrid yang terbuka untuk umum, disediakan khusus untuk mempelajari bidang Graphic Design secara teori maupun praktik.",
-    image: eventGraphic,
+    image: eventCrreativeCraft,
     details: {
       title: "EVENT GRAPHIC DESIGN",
       schedules: [
@@ -34,13 +34,13 @@ const events = [
         { date: "Minggu, 12 Juli 2026 (offline)", location: "Kampus" },
       ],
       fullDescription: "Program Graphic Design (Graphic Craft) membekali peserta dengan kemampuan desain komunikasi visual dari konsep dasar hingga praktik pembuatan karya yang menarik dan profesional.",
-      gallery: [eventGraphic]
+      gallery: [eventCrreativeCraft]
     }
   },
   {
     title: "Creative Labs Motion Graphic",
     description: "Creative Labs Motion Graphics adalah acara hybrid terbuka untuk umum, di mana peserta belajar membuat gambar digital dengan teknologi terbaru.",
-    image: eventMotion,
+    image: eventMucrex,
     details: {
       title: "EVENT MOTION GRAPHIC",
       schedules: [
@@ -48,7 +48,7 @@ const events = [
         { date: "Minggu, 19 Juli 2026 (offline)", location: "Kampus" },
       ],
       fullDescription: "Motion Graphic (Motion Craft) mengajarkan animasi dan grafis bergerak menggunakan software terkini. Peserta akan dibimbing membuat project animasi yang dinamis.",
-      gallery: [eventMotion]
+      gallery: [eventMucrex]
     }
   },
 ];
@@ -57,8 +57,8 @@ export default function Event() {
   const [selectedEvent, setSelectedEvent] = useState<EventDetailData | null>(null);
 
   return (
-    <section id="event" className="relative py-32">
-      <div className="max-w-[1200px] mx-auto px-6">
+    <section id="event" className="relative py-20 md:py-32">
+      <div className="max-w-[1200px] mx-auto px-5 sm:px-6">
         <FadeInUp>
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-8 md:mb-12">
             <h2 className="font-anton text-[40px] md:text-[60px] text-primary uppercase leading-none">event</h2>
@@ -73,11 +73,11 @@ export default function Event() {
           </div>
         </FadeInUp>
 
-        <StaggerContainer className="flex flex-col md:flex-row gap-5" staggerDelay={0.15}>
+        <StaggerContainer className="flex flex-col md:flex-row gap-4 md:gap-5" staggerDelay={0.15}>
           <StaggerItem className="md:w-[52%]">
             <div
               onClick={() => setSelectedEvent(events[0].details)}
-              className="group relative rounded-2xl overflow-hidden cursor-pointer h-[500px] md:h-[752px]"
+              className="group relative rounded-2xl overflow-hidden cursor-pointer h-[360px] sm:h-[440px] md:h-[752px]"
             >
               <img src={events[0].image} alt={events[0].title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: "linear-gradient(to bottom, rgba(0,191,255,0) 47%, rgba(102,103,228,1) 100%)" }} />
@@ -88,12 +88,12 @@ export default function Event() {
             </div>
           </StaggerItem>
 
-          <StaggerItem className="md:w-[48%] flex flex-col gap-5">
+          <StaggerItem className="md:w-[48%] flex flex-col gap-4 md:gap-5">
             {events.slice(1).map((event, i) => (
               <div
                 key={i}
                 onClick={() => setSelectedEvent(event.details)}
-                className="group relative rounded-2xl overflow-hidden cursor-pointer h-62.5 md:h-90"
+                className="group relative rounded-2xl overflow-hidden cursor-pointer h-[220px] sm:h-[250px] md:h-90"
               >
                 <img src={event.image} alt={event.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: "linear-gradient(to bottom, rgba(0,191,255,0) 47%, rgba(102,103,228,1) 100%)" }} />
@@ -107,7 +107,7 @@ export default function Event() {
         </StaggerContainer>
       </div>
 
-      <div className="max-w-150 mx-auto mt-16">
+      <div className="max-w-150 mx-5 sm:mx-auto mt-10 md:mt-16">
         <div className="h-px bg-accent" />
       </div>
 

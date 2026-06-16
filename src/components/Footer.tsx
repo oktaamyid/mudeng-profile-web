@@ -11,7 +11,7 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer id="contact" className="relative mt-24 pt-32 pb-12 overflow-hidden">
+    <footer id="contact" className="relative mt-10 md:mt-24 pt-16 md:pt-32 pb-8 md:pb-12 overflow-hidden">
       {/* Background gradient mesh — CSS blobs */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Large purple/blue ellipse — center */}
@@ -58,9 +58,9 @@ export default function Footer() {
 
       {/* Glass card */}
       <FadeInUp>
-      <div className="max-w-[1200px] mx-auto px-6 relative z-10">
+      <div className="max-w-[1200px] mx-auto px-5 sm:px-6 relative z-10">
         <div
-          className="relative rounded-3xl p-8 md:p-14"
+          className="relative rounded-3xl p-6 md:p-14"
           style={{
             background: "rgba(255,255,255,0.08)",
             backdropFilter: "blur(20px)",
@@ -70,7 +70,7 @@ export default function Footer() {
           }}
         >
           {/* Top: Logo (left) + Links (right) with gap between */}
-          <div className="flex flex-col md:flex-row items-start justify-between gap-8 mb-12">
+          <div className="flex flex-col md:flex-row items-start justify-between gap-6 md:gap-8 mb-8 md:mb-12">
             <div className="shrink-0">
               <img src={logoMonogram} alt="MUDENG" className="w-[100px] h-auto" />
             </div>
@@ -88,7 +88,7 @@ export default function Footer() {
           </div>
 
           {/* Watermark logo */}
-          <div className="flex justify-center mb-12">
+          <div className="flex justify-center mb-8 md:mb-12">
             <img src={logoFooter} alt="" className="w-[650px] h-auto" />
           </div>
 

@@ -1,145 +1,97 @@
-import { ArrowRight, ExternalLink } from "lucide-react";
-import karyaFuturisme from "../assets/karya/karya-futurisme-nusantara.png";
-import karyaMudengApp from "../assets/karya/karya-mudeng-app.png";
-import karyaTypoVibe from "../assets/karya/karya-typo-vibe.png";
-import karyaEthereal from "../assets/karya/karya-ethereal-light.png";
-import karyaMotionFlow from "../assets/karya/karya-motion-flow.png";
+import { ArrowRight } from "lucide-react";
+import { FadeInUp, StaggerContainer, StaggerItem } from "./motion";
+import karyaFuturisme from "../assets/karya/karya-1.png";
+import karyaMudengApp from "../assets/karya/karya-2.png";
+import karyaTypoVibe from "../assets/karya/karya-3.png";
 
-const works = {
-  featured: {
-    title: "FUTURISME NUSANTARA",
-    subtitle: "Short Movie - Visual Effects Focus",
-    badge: "JUARA 1 — NASIONAL",
-    image: karyaFuturisme,
-  },
-  side: {
-    title: "MUDENG APP",
-    subtitle: "Community Platform Concept",
-    badge: "UI/UX DESIGN",
-    image: karyaMudengApp,
-  },
-  small: [
+const overlayGradient = "linear-gradient(to bottom, rgba(0,191,255,0) 47%, rgba(102,103,228,1) 100%)";
+
+const works = [
     {
-      title: "TYPO-VIBE",
-      subtitle: "Typography Art - Winner Category A",
-      image: karyaTypoVibe,
+        title: "KARYA FOTOGRAFI",
+        description: "Di hadapan Mu kami bersujud, dalam untaian doa dan harmoni",
+        image: karyaFuturisme,
+        size: "large" as const,
     },
     {
-      title: "ETHEREAL LIGHT",
-      subtitle: "Photo Essay - Best Cinematography",
-      image: karyaEthereal,
+        title: "DESIGN POSTER",
+        description: "Lewat setiap bingkai kenangan, kita membuka tirai masa lalu",
+        image: karyaMudengApp,
+        size: "small" as const,
     },
     {
-      title: "MOTION FLOW",
-      subtitle: "Motion Graphics - Social Campaign",
-      image: karyaMotionFlow,
+        title: "UI DESIGN",
+        description: "Maksimalkan waktu istirahatmu tanpa antre di kantin kampus",
+        image: karyaTypoVibe,
+        size: "small" as const,
     },
-  ],
-};
+];
 
 export default function Karya() {
-  return (
-    <section id="karya" className="relative py-32 bg-white overflow-hidden">
-      <div className="max-w-[1200px] mx-auto px-6">
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
-          <div>
-            <span className="inline-block px-4 py-1.5 border border-primary/30 rounded-full text-primary text-sm font-medium mb-3">
-              Event Tahunan
-            </span>
-            <h2 className="font-anton text-[40px] md:text-6xl text-primary uppercase">
-              karya
-            </h2>
-          </div>
-          <div className="max-w-[500px]">
-            <p className="text-gray-600 text-base leading-relaxed mb-3">
-              Setelah kamu mengetahui tentang MUDENG, yuk langsung kepoin
-              kegiatannya di masing masing program kita!
-            </p>
-            <a
-              href="#"
-              className="inline-flex items-center gap-2 text-primary font-semibold text-sm hover:gap-3 transition-all"
-            >
-              LIHAT EVENT <ArrowRight size={16} />
-            </a>
-          </div>
-        </div>
+    return (
+        <section id="karya" className="relative py-20 md:py-32 bg-white">
+            <div className="max-w-300 mx-auto px-5 sm:px-6">
+                {/* Section Header */}
+                <FadeInUp>
+                    <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-8 md:mb-12">
+                        <h2 className="font-anton text-[40px] md:text-[60px] text-primary uppercase leading-none">
+                            KARYA
+                        </h2>
+                        <div className="max-w-134.25">
+                            <p className="text-[#333] text-base leading-relaxed mb-3">
+                                Setelah kamu mengetahui tentang MUDENG, yuk langsung kepoin kegiatannya di masing masing program kita!
+                            </p>
+                            <a href="#" className="inline-flex items-center gap-2 text-primary font-bold text-base hover:gap-3 transition-all">
+                                LIHAT KARYA <ArrowRight size={16} />
+                            </a>
+                        </div>
+                    </div>
+                </FadeInUp>
 
-        {/* Works Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
-          {/* Featured - Large */}
-          <div className="md:col-span-8 relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden group cursor-pointer">
-            <img
-              src={works.featured.image}
-              alt={works.featured.title}
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-8">
-              <span className="inline-block px-3 py-1 bg-yellow-400/90 text-black text-xs font-bold rounded-full mb-3">
-                {works.featured.badge}
-              </span>
-              <h3 className="font-anton text-3xl text-white uppercase mb-1">
-                {works.featured.title}
-              </h3>
-              <p className="text-white/70 text-sm">
-                {works.featured.subtitle}
-              </p>
-            </div>
-          </div>
+                {/* Works Grid — same layout as Event: 1 large left + 2 small right */}
+                <StaggerContainer className="flex flex-col md:flex-row gap-4 md:gap-5" staggerDelay={0.15}>
+                    {/* Large card — left */}
+                    <StaggerItem className="md:w-[52%]">
+                        <div className="group relative rounded-2xl overflow-hidden cursor-pointer h-[360px] sm:h-125 md:h-188">
+                            <img
+                                src={works[0].image}
+                                alt={works[0].title}
+                                className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
+                            {/* Hover overlay */}
+                            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: overlayGradient }} />
+                            <div className="absolute bottom-0 left-0 right-0 p-8 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                                <h3 className="text-white font-bold text-2xl mb-2">{works[0].title}</h3>
+                                <p className="text-white/80 text-sm leading-relaxed">{works[0].description}</p>
+                            </div>
+                        </div>
+                    </StaggerItem>
 
-          {/* Side - Tall */}
-          <div className="md:col-span-4 relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden group cursor-pointer">
-            <img
-              src={works.side.image}
-              alt={works.side.title}
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-            <div className="absolute top-6 left-6">
-              <span className="inline-block px-3 py-1 bg-primary/80 text-white text-xs font-bold rounded-full">
-                {works.side.badge}
-              </span>
+                    {/* Right column — 2 small cards */}
+                    <StaggerItem className="md:w-[48%] flex flex-col gap-4 md:gap-5">
+                        {works.slice(1).map((work, i) => (
+                            <div key={i} className="group relative rounded-2xl overflow-hidden cursor-pointer h-[220px] sm:h-62.5 md:h-90">
+                                <img
+                                    src={work.image}
+                                    alt={work.title}
+                                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                />
+                                {/* Hover overlay */}
+                                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: overlayGradient }} />
+                                <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                                    <h3 className="text-white font-bold text-xl mb-2">{work.title}</h3>
+                                    <p className="text-white/80 text-sm leading-relaxed">{work.description}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </StaggerItem>
+                </StaggerContainer>
             </div>
-            <div className="absolute bottom-0 left-0 right-0 p-6">
-              <h3 className="font-anton text-2xl text-white uppercase mb-1">
-                {works.side.title}
-              </h3>
-              <p className="text-white/70 text-sm">{works.side.subtitle}</p>
-            </div>
-          </div>
 
-          {/* Small Cards */}
-          {works.small.map((work, i) => (
-            <div
-              key={i}
-              className="md:col-span-4 rounded-2xl border border-gray-100 overflow-hidden group cursor-pointer hover:shadow-lg hover:shadow-primary/5 transition-all"
-            >
-              <div className="h-[140px] overflow-hidden">
-                <img
-                  src={work.image}
-                  alt={work.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-              </div>
-              <div className="p-5">
-                <h4 className="font-bold text-gray-900 text-lg mb-1">
-                  {work.title}
-                </h4>
-                <p className="text-gray-500 text-sm mb-3">{work.subtitle}</p>
-                <div className="flex justify-end">
-                  <ExternalLink size={16} className="text-primary" />
-                </div>
-              </div>
+            {/* Bottom divider */}
+            <div className="max-w-[600px] mx-5 sm:mx-auto mt-10 md:mt-16">
+                <div className="h-px bg-accent" />
             </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Bottom divider */}
-      <div className="max-w-[600px] mx-auto mt-16">
-        <div className="h-px bg-accent" />
-      </div>
-    </section>
-  );
+        </section>
+    );
 }

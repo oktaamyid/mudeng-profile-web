@@ -38,7 +38,7 @@ const sections = [
 
 export default function CoreTeam() {
   return (
-    <section id="coreteam" className="relative py-32">
+    <section id="coreteam" className="relative py-20 md:py-32">
       {/* Gradient mesh decorations — parallax */}
       <Parallax speed={-0.1}>
         <img src={gradientMesh2} alt="" className="absolute pointer-events-none" style={{ left: "-20%", top: "5%", width: "45%", height: "auto"}} />
@@ -55,7 +55,7 @@ export default function CoreTeam() {
         style={{ left: "-3%", top: "90%", width: "200px", height: "auto"}}
       />
 
-      <div className="max-w-[1200px] mx-auto px-6 relative z-10">
+      <div className="max-w-[1200px] mx-auto px-5 sm:px-6 relative z-10">
         {/* Section Header */}
         <FadeInUp>
           <div className="flex items-center justify-between mb-8 md:mb-16">
@@ -69,12 +69,12 @@ export default function CoreTeam() {
         </FadeInUp>
 
         {/* Content Rows */}
-        <div className="space-y-16">
+        <div className="space-y-12 md:space-y-16">
           {sections.map((section, i) => (
             <SlideIn key={i} direction={section.imagePosition === "left" ? "left" : "right"} delay={i * 0.1}>
             <div
               key={i}
-              className={`flex flex-col md:flex-row gap-8 items-center ${
+              className={`flex flex-col md:flex-row gap-6 md:gap-8 items-center ${
                 section.imagePosition === "right" ? "md:flex-row-reverse" : ""
               }`}
             >
@@ -83,7 +83,7 @@ export default function CoreTeam() {
                 <img
                   src={section.image}
                   alt={section.title}
-                  className="w-full h-[350px] md:h-[488px] object-cover"
+                  className="w-full h-[280px] sm:h-[350px] md:h-[488px] object-cover"
                 />
               </div>
 
