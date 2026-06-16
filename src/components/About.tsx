@@ -19,14 +19,14 @@ export default function About() {
       <div className="max-w-[1200px] mx-auto px-6 relative z-10">
         {/* Section Header */}
         <FadeInUp>
-          <div className="flex items-center justify-between mb-12">
+          <div className="flex items-center justify-between mb-8 md:mb-12">
             <div className="flex items-center gap-4 flex-1">
-              <h2 className="font-anton text-[60px] text-primary uppercase leading-none">
+              <h2 className="font-anton text-[40px] md:text-[60px] text-primary uppercase leading-none">
                 ABOUT
               </h2>
               <div className="flex-1 h-px bg-primary/30" />
             </div>
-            <h2 className="font-anton text-[60px] text-primary uppercase leading-none ml-4">
+            <h2 className="font-anton text-[40px] md:text-[60px] text-primary uppercase leading-none ml-4">
               MUDENG
             </h2>
           </div>
@@ -34,7 +34,7 @@ export default function About() {
 
         {/* Cover Card */}
         <FadeInUp delay={0.2}>
-          <div className="relative rounded-2xl p-8 md:p-12 overflow-visible">
+          <div className="relative rounded-2xl p-6 md:p-12 overflow-visible">
             {/* Glass backdrop */}
             <div
               className="absolute inset-0 rounded-2xl -z-1"
@@ -60,15 +60,15 @@ export default function About() {
               {/* Left: Visi & Misi */}
               <div className="flex-1">
                 <SlideIn direction="left">
-                  <h3 className="font-anton text-[36px] text-primary uppercase mb-3">VISI</h3>
-                  <p className="text-gray-700 text-base leading-relaxed mb-8">
+                  <h3 className="font-anton text-[28px] md:text-[36px] text-primary uppercase mb-3">VISI</h3>
+                  <p className="text-gray-700 text-[14px] md:text-base leading-relaxed mb-6 md:mb-8">
                     Mewujudkan MUDENG sebagai ekosistem kreatif berbasis karya, guna
                     mencetak mahasiswa yang kompeten dan siap berkarir dengan portofolio profesional.
                   </p>
                 </SlideIn>
 
                 <SlideIn direction="left" delay={0.2}>
-                  <h3 className="font-anton text-[36px] text-primary uppercase mb-4">MISI</h3>
+                  <h3 className="font-anton text-[28px] md:text-[36px] text-primary uppercase mb-4">MISI</h3>
                 </SlideIn>
                 <StaggerContainer className="space-y-4" staggerDelay={0.1}>
                   {misiItems.map((item, i) => (

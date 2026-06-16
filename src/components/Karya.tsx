@@ -47,8 +47,8 @@ export default function Karya() {
             <span className="inline-block px-4 py-1.5 border border-primary/30 rounded-full text-primary text-sm font-medium mb-3">
               Event Tahunan
             </span>
-            <h2 className="font-anton text-5xl md:text-6xl text-primary uppercase">
-              event
+            <h2 className="font-anton text-[40px] md:text-6xl text-primary uppercase">
+              karya
             </h2>
           </div>
           <div className="max-w-[500px]">
@@ -68,7 +68,7 @@ export default function Karya() {
         {/* Works Grid */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4">
           {/* Featured - Large */}
-          <div className="md:col-span-8 relative h-[500px] rounded-2xl overflow-hidden group cursor-pointer">
+          <div className="md:col-span-8 relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden group cursor-pointer">
             <img
               src={works.featured.image}
               alt={works.featured.title}
@@ -89,7 +89,7 @@ export default function Karya() {
           </div>
 
           {/* Side - Tall */}
-          <div className="md:col-span-4 relative h-[500px] rounded-2xl overflow-hidden group cursor-pointer">
+          <div className="md:col-span-4 relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden group cursor-pointer">
             <img
               src={works.side.image}
               alt={works.side.title}

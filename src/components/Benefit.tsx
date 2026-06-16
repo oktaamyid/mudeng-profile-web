@@ -41,19 +41,19 @@ export default function Benefit() {
       <div className="max-w-[1200px] mx-auto px-6 relative z-10">
         {/* Section Header */}
         <FadeInUp>
-        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-16">
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-8 md:mb-16">
           {/* Left: description */}
-          <p className="text-[#0F0F0F] text-base leading-relaxed max-w-[537px]">
+          <p className="text-[#0F0F0F] text-[14px] md:text-base leading-relaxed max-w-[537px]">
             Setelah kamu mengetahui tentang MUDENG, yuk langsung kepoin
             kegiatannya di masing masing program kita!
           </p>
 
           {/* Right: tag + title */}
-          <div className="text-right">
+          <div className="text-left md:text-right">
             <span className="inline-block px-4 py-2 bg-[#F7F5FF] rounded-2xl text-[#8D6FDE] text-sm font-medium mb-3">
               Event Tahunan
             </span>
-            <h2 className="font-anton text-[60px] text-primary uppercase leading-none">
+            <h2 className="font-anton text-[40px] md:text-[60px] text-primary uppercase leading-none">
               benefit
             </h2>
           </div>

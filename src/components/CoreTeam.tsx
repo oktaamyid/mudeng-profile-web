@@ -58,11 +58,11 @@ export default function CoreTeam() {
       <div className="max-w-[1200px] mx-auto px-6 relative z-10">
         {/* Section Header */}
         <FadeInUp>
-          <div className="flex items-center justify-between mb-16">
-            <h2 className="font-anton text-[60px] text-primary uppercase leading-none">
+          <div className="flex items-center justify-between mb-8 md:mb-16">
+            <h2 className="font-anton text-[32px] sm:text-[40px] md:text-[60px] text-primary uppercase leading-none">
             CORE TEAM
           </h2>
-          <h2 className="font-anton text-[60px] text-primary uppercase leading-none">
+          <h2 className="font-anton text-[32px] sm:text-[40px] md:text-[60px] text-primary uppercase leading-none">
             MUDENG
           </h2>
         </div>

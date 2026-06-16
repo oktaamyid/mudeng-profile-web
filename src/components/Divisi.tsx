@@ -69,23 +69,23 @@ export default function Divisi() {
 
       <div className="max-w-[1200px] mx-auto px-6 relative z-10">
         {/* Section Header */}
-        <div className="flex items-center justify-between mb-16">
-          <h2 className="font-anton text-[60px] text-primary uppercase leading-none">
+        <div className="flex items-center justify-between mb-8 md:mb-16">
+          <h2 className="font-anton text-[40px] md:text-[60px] text-primary uppercase leading-none">
             DIVISI
           </h2>
-          <div className="flex-1 mx-6 h-px bg-gray-200" />
-          <h2 className="font-anton text-[60px] text-primary uppercase leading-none">
+          <div className="flex-1 mx-2 md:mx-6 h-px bg-gray-200" />
+          <h2 className="font-anton text-[40px] md:text-[60px] text-primary uppercase leading-none">
             MUDENG
           </h2>
         </div>
 
         {/* Division Cards — show 4 at a time, accordion style */}
-        <div className="flex gap-4 h-[533px] justify-center">
+        <div className="flex gap-2 md:gap-4 h-[400px] md:h-[533px] justify-center">
           {visibleDivisions.map((div, i) => (
             <div
               key={startIndex + i}
               className={`relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-500 ${
-                activeCard === i ? "w-[350px]" : "w-[150px]"
+                activeCard === i ? "w-[250px] md:w-[350px]" : "w-[60px] md:w-[150px]"
               }`}
               onClick={() => setActiveCard(i)}
             >
@@ -105,8 +105,8 @@ export default function Divisi() {
                 <span
                   className={`text-white font-bold transition-all duration-500 ${
                     activeCard === i
-                      ? "text-xl"
-                      : "text-base -rotate-90 origin-bottom-left translate-x-6 -translate-y-4 whitespace-nowrap"
+                      ? "text-lg md:text-xl"
+                      : "text-sm md:text-base -rotate-90 origin-bottom-left translate-x-4 md:translate-x-6 -translate-y-4 whitespace-nowrap"
                   }`}
                 >
                   {div.name}

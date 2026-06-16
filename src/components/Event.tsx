@@ -60,8 +60,8 @@ export default function Event() {
     <section id="event" className="relative py-32">
       <div className="max-w-[1200px] mx-auto px-6">
         <FadeInUp>
-          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-12">
-            <h2 className="font-anton text-[60px] text-primary uppercase leading-none">event</h2>
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-8 md:mb-12">
+            <h2 className="font-anton text-[40px] md:text-[60px] text-primary uppercase leading-none">event</h2>
             <div className="max-w-[537px]">
               <p className="text-[#333] text-base leading-relaxed mb-3">
                 Setelah kamu mengetahui tentang MUDENG, yuk langsung kepoin kegiatannya di masing masing program kita!
@@ -75,7 +75,7 @@ export default function Event() {
 
         <StaggerContainer className="flex flex-col md:flex-row gap-5" staggerDelay={0.15}>
           <StaggerItem className="md:w-[52%]">
-            <div 
+            <div
               onClick={() => setSelectedEvent(events[0].details)}
               className="group relative rounded-2xl overflow-hidden cursor-pointer h-[500px] md:h-[752px]"
             >
@@ -90,10 +90,10 @@ export default function Event() {
 
           <StaggerItem className="md:w-[48%] flex flex-col gap-5">
             {events.slice(1).map((event, i) => (
-              <div 
-                key={i} 
+              <div
+                key={i}
                 onClick={() => setSelectedEvent(event.details)}
-                className="group relative rounded-2xl overflow-hidden cursor-pointer h-[250px] md:h-[360px]"
+                className="group relative rounded-2xl overflow-hidden cursor-pointer h-62.5 md:h-90"
               >
                 <img src={event.image} alt={event.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: "linear-gradient(to bottom, rgba(0,191,255,0) 47%, rgba(102,103,228,1) 100%)" }} />
@@ -107,14 +107,14 @@ export default function Event() {
         </StaggerContainer>
       </div>
 
-      <div className="max-w-[600px] mx-auto mt-16">
+      <div className="max-w-150 mx-auto mt-16">
         <div className="h-px bg-accent" />
       </div>
 
-      <EventPopup 
-        isOpen={!!selectedEvent} 
-        onClose={() => setSelectedEvent(null)} 
-        data={selectedEvent} 
+      <EventPopup
+        isOpen={!!selectedEvent}
+        onClose={() => setSelectedEvent(null)}
+        data={selectedEvent}
       />
     </section>
   );

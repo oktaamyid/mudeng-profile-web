@@ -60,7 +60,7 @@ export default function Footer() {
       <FadeInUp>
       <div className="max-w-[1200px] mx-auto px-6 relative z-10">
         <div
-          className="relative rounded-3xl p-10 md:p-14"
+          className="relative rounded-3xl p-8 md:p-14"
           style={{
             background: "rgba(255,255,255,0.08)",
             backdropFilter: "blur(20px)",
@@ -93,9 +93,9 @@ export default function Footer() {
           </div>
 
           {/* Divider + Credits */}
-          <div className="border-t border-white/15 pt-5 flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="border-t border-white/15 pt-5 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
             <p className="text-white text-sm">© {new Date().getFullYear()} Mudeng. All rights reserved.</p>
-            <div className="flex gap-6">
+            <div className="flex flex-wrap justify-center gap-4 md:gap-6">
               <a href="#" className="text-white hover:text-white text-sm transition-colors">Privacy Policy</a>
               <a href="#" className="text-white hover:text-white text-sm transition-colors">Terms of Service</a>
               <a href="#" className="text-white hover:text-white text-sm transition-colors">Cookie Settings</a>
