@@ -12,8 +12,8 @@ const navLinks = [
 ];
 
 const pillStyle = {
-     background: "linear-gradient(160deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.2) 100%)",
-     boxShadow: "0 8px 32px rgba(31, 81, 218, 0.3)",
+     background: "rgba(255, 255, 255, 0.08)",
+     boxShadow: "inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 8px 32px rgba(0, 0, 0, 0.4)",
 };
 
 const contactBtnStyle = {
@@ -95,14 +95,14 @@ export default function Navbar() {
                     width:
                          window.innerWidth < 768
                               ? "calc(100% - 2rem)"
-                              : isCompact 
-                              ? "fit-content"
+                              : isCompact
+                                   ? "fit-content"
                                    : "calc(100% - 2rem)",
                     maxWidth: "1152px",
                }}
           >
                <div
-                    className="grid items-center px-6 py-3 rounded-full border border-white/40 backdrop-blur-xl"
+                    className="grid items-center px-6 py-3 rounded-full border border-white/10 backdrop-blur-xl transition-all duration-500"
                     style={{
                          ...pillStyle,
                          gridTemplateColumns: isCompact ? "1fr" : "auto 1fr auto"
@@ -112,7 +112,7 @@ export default function Navbar() {
                     <img
                          src={logoMain}
                          alt="MUDENG"
-                         className="object-contain flex-shrink-0"
+                         className="object-contain shrink-0"
                          style={{
                               height: "20px",
                               width: "auto",
@@ -135,13 +135,13 @@ export default function Navbar() {
                                    alt="MUDENG"
                                    style={{ height: "20px", width: "auto", flexShrink: 0 }}
                               />
-                              <span className="w-px h-4 bg-[#434655]/30 flex-shrink-0" />
+                              <span className="w-px h-4 bg-[#434655]/30 shrink-0" />
                               <span className="text-[#434655] text-sm font-semibold tracking-wide whitespace-nowrap">
                                    {activeSection}
                               </span>
-                              <span className="relative flex h-2 w-2 flex-shrink-0">
-                                   <span className="animate-ping absolute h-full w-full rounded-full bg-emerald-400 opacity-60" />
-                                   <span className="relative h-2 w-2 rounded-full bg-emerald-400" />
+                              <span className="relative flex h-2 w-2 shrink-0">
+                                   <span className="animate-ping absolute h-full w-full rounded-full bg-[#6667E4] opacity-80" />
+                                   <span className="relative h-2 w-2 rounded-full bg-[#6667E4]" />
                               </span>
                               {isMobile && (
                                    <button

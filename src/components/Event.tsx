@@ -58,11 +58,11 @@ export default function Event() {
 
   return (
     <section id="event" className="relative py-20 md:py-32">
-      <div className="max-w-[1200px] mx-auto px-5 sm:px-6">
+      <div className="max-w-300 mx-auto px-5 sm:px-6">
         <FadeInUp>
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-8 md:mb-12">
             <h2 className="font-anton text-[40px] md:text-[60px] text-primary uppercase leading-none">event</h2>
-            <div className="max-w-[537px]">
+            <div className="max-w-134.25">
               <p className="text-[#333] text-base leading-relaxed mb-3">
                 Setelah kamu mengetahui tentang MUDENG, yuk langsung kepoin kegiatannya di masing masing program kita!
               </p>
@@ -77,7 +77,7 @@ export default function Event() {
           <StaggerItem className="md:w-[52%]">
             <div
               onClick={() => setSelectedEvent(events[0].details)}
-              className="group relative rounded-2xl overflow-hidden cursor-pointer h-[360px] sm:h-[440px] md:h-[752px]"
+              className="group relative rounded-2xl overflow-hidden cursor-pointer h-90 sm:h-110 md:h-188"
             >
               <img src={events[0].image} alt={events[0].title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: "linear-gradient(to bottom, rgba(0,191,255,0) 47%, rgba(102,103,228,1) 100%)" }} />
@@ -93,7 +93,7 @@ export default function Event() {
               <div
                 key={i}
                 onClick={() => setSelectedEvent(event.details)}
-                className="group relative rounded-2xl overflow-hidden cursor-pointer h-[220px] sm:h-[250px] md:h-90"
+                className="group relative rounded-2xl overflow-hidden cursor-pointer h-55 sm:h-62.5 md:h-90"
               >
                 <img src={event.image} alt={event.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: "linear-gradient(to bottom, rgba(0,191,255,0) 47%, rgba(102,103,228,1) 100%)" }} />
