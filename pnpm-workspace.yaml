@@ -1,2 +1,5 @@
+packages:
+  - "."
 allowBuilds:
-  sharp: true
+  '0': sharp
+  sharp: set this to true or false

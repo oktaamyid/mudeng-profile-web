@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Jika Anda nantinya memiliki sitemap, hilangkan tanda pagar di bawah ini
+# Sitemap: https://mudeng.nurulfikri.ac.id/sitemap.xml
