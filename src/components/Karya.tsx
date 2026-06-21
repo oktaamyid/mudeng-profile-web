@@ -39,7 +39,7 @@ export default function Karya() {
                         </h2>
                         <div className="max-w-134.25">
                             <p className="text-[#333] text-base leading-relaxed mb-3">
-                                Setelah kamu mengetahui tentang MUDENG, yuk langsung kepoin kegiatannya di masing masing program kita!
+                                Intip berbagai mahakarya menakjubkan yang telah diciptakan oleh talenta-talenta kreatif MUDENG. Dari visual desain hingga antarmuka memukau, saksikan sendiri kualitas yang kami hasilkan!
                             </p>
                             <a href="#" className="inline-flex items-center gap-2 text-primary font-bold text-base hover:gap-3 transition-all">
                                 LIHAT KARYA <ArrowRight size={16} />
