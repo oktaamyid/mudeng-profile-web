@@ -1,4 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
+import { useEffect } from 'react';
 import { X } from 'lucide-react';
 import patternGrid from "../assets/hero/pattern.png";
 import star6 from "../assets/hero/star-6.png";
@@ -22,18 +23,35 @@ interface EventPopupProps {
 }
 
 export default function EventPopup({ isOpen, onClose, data }: EventPopupProps) {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+      document.documentElement.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+      document.documentElement.style.overflow = '';
+    };
+  }, [isOpen]);
+
   return (
     <AnimatePresence>
       {isOpen && data && (
-        <>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={onClose}
-            className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm"
-          />
-          <motion.div
+        <motion.div
+          key="overlay"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={onClose}
+          className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm"
+        />
+      )}
+      {isOpen && data && (
+        <motion.div
+          key="modal"
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
@@ -105,7 +123,6 @@ export default function EventPopup({ isOpen, onClose, data }: EventPopupProps) {
               </div>
             </div>
           </motion.div>
-        </>
       )}
     </AnimatePresence>
   );

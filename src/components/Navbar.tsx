@@ -1,15 +1,14 @@
 import { useState, useEffect, useRef } from "react";
 import { Menu, X } from "lucide-react";
-import logoMain from "../assets/logo/logo-mudeng.svg";
+const logoMain = "https://cdn.mudeng.oktaa.my.id/logo/logo-mudeng.svg";
 import logoSmall from "../assets/logo/logo-monogram.svg";
 
 const navLinks = [
   { label: "HOME", href: "#home", sectionId: "home" },
   { label: "ABOUT", href: "#about", sectionId: "about" },
-  { label: "EVENT", href: "#event", sectionId: "event" },
   { label: "KARYA", href: "#karya", sectionId: "karya" },
+  { label: "EVENT", href: "#event", sectionId: "event" },
   { label: "CORE TEAM", href: "#coreteam", sectionId: "coreteam" },
-  { label: "CONTACT", href: "#contact", sectionId: "contact" },
 ];
 
 const pillStyle = {
@@ -205,7 +204,9 @@ export default function Navbar() {
           }}
         >
           <a
-            href="#contact"
+            href="https://chat.whatsapp.com/LOrUMOHuLMY3ftHmz6dovF"
+            target="_blank"
+            rel="noopener noreferrer"
             className={`hidden md:flex items-center justify-center px-8 py-2.5 rounded-full text-white text-xs font-bold tracking-[1.2px] whitespace-nowrap relative overflow-hidden transition-all duration-300 border border-[#6667E4] group z-10 hover:border-[#0082FF] ${isCompact ? "hidden" : ""
               }`}
             style={{
@@ -218,7 +219,7 @@ export default function Navbar() {
 
 
             <span className="transition-colors duration-300 group-hover:text-white group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.6)]">
-              CONTACT
+              JOIN NOW
             </span>
           </a>
         </div>
@@ -247,12 +248,14 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="#contact"
+            href="https://chat.whatsapp.com/LOrUMOHuLMY3ftHmz6dovF"
+            target="_blank"
+            rel="noopener noreferrer"
             className="block mt-3 px-6 py-2.5 rounded-full text-white text-xs font-bold tracking-[1.2px] text-center"
             style={contactBtnStyle}
             onClick={() => setIsOpen(false)}
           >
-            CONTACT
+            JOIN NOW
           </a>
         </div>
       )}

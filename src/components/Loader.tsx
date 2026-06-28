@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import mudengLogo from '../assets/logo/logo-mudeng.svg';
+const mudengLogo = 'https://cdn.mudeng.oktaa.my.id/logo/logo-mudeng.svg';
 
 export default function Loader() {
   return (
@@ -7,7 +7,7 @@ export default function Loader() {
       initial={{ opacity: 1 }}
       exit={{ opacity: 0, backdropFilter: 'blur(0px)' }}
       transition={{ duration: 0.6, ease: 'easeInOut' }}
-      className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-white/60 backdrop-blur-2xl overflow-hidden"
+      className="fixed inset-0 z-9999 flex flex-col items-center justify-center bg-white/60 backdrop-blur-2xl overflow-hidden"
     >
       {/* Animated Gradient Clouds Background */}
       <motion.div

@@ -5,6 +5,7 @@ import eventCrreativeCraft from "../assets/events/event-creativecraft.png";
 import eventMucrex from "../assets/events/event-mucrex.png";
 import { useState } from "react";
 import EventPopup, { type EventDetailData } from "./EventPopup";
+import AllEventsPopup from "./AllEventsPopup";
 
 const events = [
   {
@@ -55,6 +56,7 @@ const events = [
 
 export default function Event() {
   const [selectedEvent, setSelectedEvent] = useState<EventDetailData | null>(null);
+  const [isAllEventsOpen, setIsAllEventsOpen] = useState(false);
 
   return (
     <section id="event" className="relative py-20 md:py-32">
@@ -66,9 +68,15 @@ export default function Event() {
               <p className="text-[#333] text-base leading-relaxed mb-3">
                 Setelah kamu mengetahui tentang MUDENG, yuk langsung kepoin kegiatannya di masing masing program kita!
               </p>
-              <a href="#" className="inline-flex items-center gap-2 text-primary font-bold text-base hover:gap-3 transition-all">
+              <button 
+                onClick={(e) => {
+                  e.preventDefault();
+                  setIsAllEventsOpen(true);
+                }} 
+                className="inline-flex items-center gap-2 text-primary font-bold text-base hover:gap-3 transition-all"
+              >
                 LIHAT EVENT <ArrowRight size={16} />
-              </a>
+              </button>
             </div>
           </div>
         </FadeInUp>
@@ -82,8 +90,8 @@ export default function Event() {
               <img src={events[0].image} alt={events[0].title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
               <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: "linear-gradient(to bottom, rgba(0,191,255,0) 47%, rgba(102,103,228,1) 100%)" }} />
               <div className="absolute bottom-0 left-0 right-0 p-8 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                <h3 className="text-white font-bold text-2xl mb-2">{events[0].title}</h3>
-                <p className="text-white/80 text-sm leading-relaxed text-center">{events[0].description}</p>
+                <h3 className="text-white font-bold text-2xl mb-2 text-start">{events[0].title}</h3>
+                <p className="text-white/80 text-sm leading-relaxed text-start">{events[0].description}</p>
               </div>
             </div>
           </StaggerItem>
@@ -98,8 +106,8 @@ export default function Event() {
                 <img src={event.image} alt={event.title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" style={{ background: "linear-gradient(to bottom, rgba(0,191,255,0) 47%, rgba(102,103,228,1) 100%)" }} />
                 <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                  <h3 className="text-white font-bold text-xl mb-2">{event.title}</h3>
-                  <p className="text-white/80 text-sm leading-relaxed text-center">{event.description}</p>
+                  <h3 className="text-white font-bold text-xl mb-2 text-start">{event.title}</h3>
+                  <p className="text-white/80 text-sm leading-relaxed text-start">{event.description}</p>
                 </div>
               </div>
             ))}
@@ -115,6 +123,10 @@ export default function Event() {
         isOpen={!!selectedEvent}
         onClose={() => setSelectedEvent(null)}
         data={selectedEvent}
+      />
+      <AllEventsPopup
+        isOpen={isAllEventsOpen}
+        onClose={() => setIsAllEventsOpen(false)}
       />
     </section>
   );
