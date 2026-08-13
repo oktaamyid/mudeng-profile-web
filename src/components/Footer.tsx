@@ -1,5 +1,6 @@
 import logoMonogram from "../assets/logo/logo-monogram.svg";
 import logoFooter from "../assets/logo/logo-footer-full.svg";
+import footerBg from "../assets/footer/footer-bg.png";
 import { FadeInUp } from "./motion";
 
 const footerLinks = [
@@ -39,38 +40,25 @@ const footerLinks = [
 export default function Footer() {
   return (
     <footer id="contact" className="relative mt-10 md:mt-24 pt-16 md:pt-32 pb-8 md:pb-12 overflow-hidden">
-      <div className="absolute inset-0 pointer-events-none">
-        {/* Large purple/blue ellipse — center */}
-        <div
-          className="absolute rounded-full"
+      <div className="absolute inset-0 pointer-events-none"
+        style={{
+          WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 15%, rgba(0,0,0,1) 40%, rgba(0,0,0,1) 100%)",
+          maskImage: "linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 15%, rgba(0,0,0,1) 40%, rgba(0,0,0,1) 100%)",
+        }}
+      >
+        {/* Background image — centered */}
+        <img
+          src={footerBg}
+          alt=""
+          className="absolute pointer-events-none"
           style={{
-            width: "120%",
-            height: "100%",
-            left: "-10%",
-            top: "10%",
-            background: "radial-gradient(ellipse at center, rgba(104,73,225,0.9) 0%, rgba(80,50,200,0.6) 40%, transparent 70%)",
-          }}
-        />
-        {/* Cyan/blue accent — left */}
-        <div
-          className="absolute rounded-full"
-          style={{
-            width: "50%",
-            height: "80%",
-            left: "-10%",
-            top: "0%",
-            background: "radial-gradient(ellipse at center, rgba(0,180,255,0.7) 0%, rgba(0,150,255,0.3) 40%, transparent 65%)",
-          }}
-        />
-        {/* Purple accent — right bottom */}
-        <div
-          className="absolute rounded-full"
-          style={{
-            width: "40%",
-            height: "70%",
-            right: "-5%",
-            bottom: "0%",
-            background: "radial-gradient(ellipse at center, rgba(90,50,200,0.8) 0%, rgba(70,30,180,0.4) 40%, transparent 65%)",
+            width: "110%",
+            height: "auto",
+            left: "50%",
+            top: "60%",
+            transform: "translate(-50%, -50%)",
+            minHeight: "100%",
+            objectFit: "cover",
           }}
         />
         {/* Noise texture */}

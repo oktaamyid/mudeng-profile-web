@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   ChevronLeft, ChevronRight, Crown, Calendar, Palette, Megaphone,
   Briefcase, Share2, CircleDollarSign, Users, BookText
 } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
+import { TextReveal } from "./motion";
 import divisiFinance from "../assets/divisi/divisi-finance.png";
 import divisiLeader from "../assets/divisi/divisi-leader.jpg";
 import divisiMedia from "../assets/divisi/divisi-media.jpg";
@@ -14,6 +15,8 @@ import divisiEvent from "../assets/divisi/divisi-event.png";
 import divisiSocmed from "../assets/divisi/divisi-socmed.png";
 import starBig from "../assets/divisi/star-divisi-big.svg";
 import starSmall from "../assets/divisi/star-divisi-small.svg";
+import starBig10 from "../assets/hero/star-10-big.png";
+import starBig11 from "../assets/hero/star-11-big.png";
 
 const divisions = [
   { name: "Leader", icon: Crown, image: divisiLeader, desc: "Bertanggung jawab memimpin dan mengoordinasikan seluruh divisi agar kegiatan berjalan lancar." },
@@ -31,6 +34,17 @@ export default function Divisi() {
   const [startIndex, setStartIndex] = useState(0);
   const [activeCardName, setActiveCardName] = useState<string | null>(divisions[0].name);
   const [visibleCount, setVisibleCount] = useState(4);
+
+  // Parallax for decorative stars — bounded to section
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"],
+  });
+  const bigStarY = useTransform(scrollYProgress, [0, 0.5, 1], [480, 0, -480]);
+  const smallStarY = useTransform(scrollYProgress, [0, 0.5, 1], [-400, 0, 400]);
+  const bigStar10Y = useTransform(scrollYProgress, [0, 0.5, 1], [-560, 0, 560]);
+  const bigStar11Y = useTransform(scrollYProgress, [0, 0.5, 1], [600, 0, -600]);
 
   // Deteksi ukuran layar untuk menentukan jumlah card yang tampil (Opsi A)
   useEffect(() => {
@@ -68,32 +82,46 @@ export default function Divisi() {
   const canNext = startIndex + visibleCount < divisions.length;
 
   return (
-    <section id="divisi" className="relative py-24 md:py-32 overflow-hidden">
-      {/* Decorative stars */}
-      <img
+    <section ref={sectionRef} id="divisi" className="relative py-24 md:py-32">
+      {/* Decorative stars — with parallax */}
+      <motion.img
         src={starBig}
         alt=""
         className="absolute pointer-events-none rotate-12"
-        style={{ left: "-8%", top: "20%", width: "18%", height: "auto" }}
+        style={{ left: "-8%", top: "20%", width: "18%", height: "auto", y: bigStarY }}
       />
-      <img
+      <motion.img
         src={starSmall}
         alt=""
         className="absolute pointer-events-none"
-        style={{ left: "85%", top: "62%", width: "12%", height: "auto" }}
+        style={{ left: "85%", top: "62%", width: "12%", height: "auto", y: smallStarY }}
+      />
+      <motion.img
+        src={starBig10}
+        alt=""
+        className="absolute pointer-events-none hidden md:block"
+        style={{ right: "-5%", top: "-5%", width: "220px", height: "auto", y: bigStar10Y }}
+      />
+      <motion.img
+        src={starBig11}
+        alt=""
+        className="absolute pointer-events-none hidden md:block"
+        style={{ left: "-3%", bottom: "-5%", width: "180px", height: "auto", y: bigStar11Y }}
       />
 
       <div className="max-w-300 mx-auto px-4 md:px-6 relative z-10">
         {/* Section Header */}
-        <div className="flex items-center justify-between mb-8 md:mb-16">
-          <h2 className="font-anton text-[36px] sm:text-[40px] md:text-[60px] text-primary uppercase leading-none">
-            DIVISI
-          </h2>
-          <div className="flex-1 mx-3 md:mx-6 h-px bg-gray-200" />
-          <h2 className="font-anton text-[36px] sm:text-[40px] md:text-[60px] text-primary uppercase leading-none">
-            MUDENG
-          </h2>
-        </div>
+        <TextReveal>
+          <div className="flex items-center justify-between mb-8 md:mb-16">
+            <h2 className="font-anton text-[36px] sm:text-[40px] md:text-[60px] text-primary uppercase leading-none">
+              DIVISI
+            </h2>
+            <div className="flex-1 mx-3 md:mx-6 h-px bg-gray-200" />
+            <h2 className="font-anton text-[36px] sm:text-[40px] md:text-[60px] text-primary uppercase leading-none">
+              MUDENG
+            </h2>
+          </div>
+        </TextReveal>
 
         {/* Division Cards — smooth layout animation */}
         <div className="flex gap-2 md:gap-3 lg:gap-4 h-[350px] sm:h-[400px] md:h-[533px] justify-center">

@@ -2,7 +2,7 @@ import iconSecured from "../assets/icons/icon-secured.svg";
 import iconFolder from "../assets/icons/icon-folder.svg";
 import iconRocket from "../assets/icons/icon-rocket.svg";
 import benefitBg from "../assets/benefit/benefit-bg.webp";
-import { FadeInUp, StaggerContainer, StaggerItem } from "./motion";
+import { FadeInUp, StaggerContainer, StaggerItem, TextReveal, SectionStars } from "./motion";
 
 const benefits = [
   {
@@ -28,7 +28,7 @@ const benefits = [
 export default function Benefit() {
   return (
     <section
-      className="relative py-20 md:py-32 bg-white"
+      className="relative py-20 md:py-32"
     >
       {/* Background: gradient mesh blob + grid combined (single asset) */}
       <img
@@ -38,9 +38,11 @@ export default function Benefit() {
         style={{ left: "50%", top: "55%", transform: "translate(-50%, -50%)", height: "auto" }}
       />
 
+      <SectionStars variant={2} />
+
       <div className="max-w-[1200px] mx-auto px-5 sm:px-6 relative z-10">
         {/* Section Header */}
-        <FadeInUp>
+        <TextReveal>
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-8 md:mb-16">
             {/* Left: description */}
             <p className="text-[#0F0F0F] text-[14px] md:text-base leading-relaxed max-w-[537px]">
@@ -49,15 +51,12 @@ export default function Benefit() {
 
             {/* Right: tag + title */}
             <div className="text-left md:text-right">
-              <span className="inline-block px-4 py-2 bg-[#F7F5FF] rounded-2xl text-[#8D6FDE] text-sm font-medium mb-3">
-                Kenapa MUDENG?
-              </span>
               <h2 className="font-anton text-[40px] md:text-[60px] text-primary uppercase leading-none">
                 benefit
               </h2>
             </div>
           </div>
-        </FadeInUp>
+        </TextReveal>
 
         {/* Benefit Cards — glass effect */}
         <StaggerContainer className="grid md:grid-cols-3 gap-4 md:gap-6" staggerDelay={0.15}>

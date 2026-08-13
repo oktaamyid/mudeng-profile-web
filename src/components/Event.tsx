@@ -1,8 +1,9 @@
 import { ArrowRight } from "lucide-react";
-import { FadeInUp, StaggerContainer, StaggerItem } from "./motion";
+import { FadeInUp, StaggerContainer, StaggerItem, TextReveal, SectionStars } from "./motion";
 import eventUICraft from "../assets/events/event-uicraft.png";
 import eventCrreativeCraft from "../assets/events/event-creativecraft.png";
 import eventMucrex from "../assets/events/event-mucrex.png";
+import eventBg from "../assets/benefit/benefit-bg.webp";
 import { useState } from "react";
 import EventPopup, { type EventDetailData } from "./EventPopup";
 import AllEventsPopup from "./AllEventsPopup";
@@ -60,8 +61,16 @@ export default function Event() {
 
   return (
     <section id="event" className="relative py-20 md:py-32">
-      <div className="max-w-300 mx-auto px-5 sm:px-6">
-        <FadeInUp>
+      {/* Background image */}
+      <img
+        src={eventBg}
+        alt=""
+        className="absolute pointer-events-none w-[105%] md:w-[68%]"
+        style={{ left: "50%", top: "50%", transform: "translate(-50%, -50%)", height: "auto" }}
+      />
+      <SectionStars variant={4} />
+      <div className="max-w-300 mx-auto px-5 sm:px-6 relative z-10">
+        <TextReveal>
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-8 md:mb-12">
             <h2 className="font-anton text-[40px] md:text-[60px] text-primary uppercase leading-none">event</h2>
             <div className="max-w-134.25">
@@ -79,7 +88,7 @@ export default function Event() {
               </button>
             </div>
           </div>
-        </FadeInUp>
+        </TextReveal>
 
         <StaggerContainer className="flex flex-col md:flex-row gap-4 md:gap-5" staggerDelay={0.15}>
           <StaggerItem className="md:w-[52%]">
