@@ -4,7 +4,7 @@ import star25 from "../assets/about/star-about-2.svg";
 import star28 from "../assets/about/star-about-1.svg";
 import star29 from "../assets/about/star-about-4.svg";
 import star30 from "../assets/about/star-about-3.svg";
-import { FadeInUp, Parallax, SlideIn, StaggerContainer, StaggerItem } from "./motion";
+import { FadeInUp, Parallax, SlideIn, StaggerContainer, StaggerItem, TextReveal, SectionStars } from "./motion";
 
 const misiItems = [
   "Meningkatkan kompetensi mahasiswa melalui program latihan, mentoring, dan workshop yang relevan dengan kebutuhan industri kreatif.",
@@ -16,9 +16,10 @@ const misiItems = [
 export default function About() {
   return (
     <section id="about" className="relative py-20 md:py-32 mt-6 md:mt-16">
+      <SectionStars variant={1} />
       <div className="max-w-[1200px] mx-auto px-5 sm:px-6 relative z-10">
         {/* Section Header */}
-        <FadeInUp>
+        <TextReveal>
           <div className="flex items-center justify-between mb-8 md:mb-12">
             <div className="flex items-center gap-4 flex-1">
               <h2 className="font-anton text-[40px] md:text-[60px] text-primary uppercase leading-none">
@@ -30,7 +31,7 @@ export default function About() {
               MUDENG
             </h2>
           </div>
-        </FadeInUp>
+        </TextReveal>
 
         {/* Cover Card */}
         <FadeInUp delay={0.2}>

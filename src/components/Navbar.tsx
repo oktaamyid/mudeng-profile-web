@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 const logoMain = "https://cdn.mudeng.oktaa.my.id/logo/logo-mudeng.svg";
 import logoSmall from "../assets/logo/logo-monogram.svg";
@@ -19,6 +20,13 @@ const pillStyle = {
 const contactBtnStyle = {
   background: "linear-gradient(160deg, rgba(102,103,228,1) 0%, rgba(102,103,228,0.8) 100%)",
   boxShadow: "0 10px 20px rgba(31, 81, 218, 0.3), inset 0 2px 4px rgba(255,255,255,0.3)",
+};
+
+const springTransition = {
+  type: "spring" as const,
+  stiffness: 200,
+  damping: 30,
+  mass: 1,
 };
 
 export default function Navbar() {
@@ -89,8 +97,10 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav
-      className="fixed top-4 left-1/2 -translate-x-1/2 z-50 px-4 transition-all duration-500 ease-in-out"
+    <motion.nav
+      layout
+      transition={springTransition}
+      className="fixed top-4 left-1/2 -translate-x-1/2 z-50 px-4"
       style={{
         width:
           window.innerWidth < 768
@@ -101,11 +111,13 @@ export default function Navbar() {
         maxWidth: "1152px",
       }}
     >
-      <div
-        className="grid items-center px-6 py-3 rounded-full border border-white/10 backdrop-blur-xl transition-all duration-500"
+      <motion.div
+        layout
+        transition={springTransition}
+        className="grid items-center px-6 py-3 rounded-full border border-white/10 backdrop-blur-xl"
         style={{
           ...pillStyle,
-          gridTemplateColumns: isCompact ? "1fr" : "auto 1fr auto"
+          gridTemplateColumns: isCompact ? "1fr" : "auto 1fr auto",
         }}
       >
         {/* logo img (desktop version)*/}
@@ -223,7 +235,7 @@ export default function Navbar() {
             </span>
           </a>
         </div>
-      </div>
+      </motion.div>
 
       {/* mobile dropdown */}
       {isOpen && (
@@ -259,6 +271,6 @@ export default function Navbar() {
           </a>
         </div>
       )}
-    </nav>
+    </motion.nav>
   );
 }

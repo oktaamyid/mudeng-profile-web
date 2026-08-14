@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
-import { FadeInUp, StaggerContainer, StaggerItem } from "./motion";
+import { FadeInUp, StaggerContainer, StaggerItem, TextReveal, SectionStars } from "./motion";
 import karyaFuturisme from "../assets/karya/karya-1.png";
 import karyaMudengApp from "../assets/karya/karya-2.png";
 import karyaTypoVibe from "../assets/karya/karya-3.png";
+import karyaBg from "../assets/benefit/benefit-bg.webp";
 import KaryaPopup, { type KaryaDetailData } from "./KaryaPopup";
 import AllKaryaPopup from "./AllKaryaPopup";
 
@@ -38,10 +39,18 @@ export default function Karya() {
     const [isAllKaryaOpen, setIsAllKaryaOpen] = useState(false);
 
     return (
-        <section id="karya" className="relative py-20 md:py-32 bg-white">
-            <div className="max-w-300 mx-auto px-5 sm:px-6">
+        <section id="karya" className="relative py-20 md:py-32">
+            {/* Background image */}
+            <img
+                src={karyaBg}
+                alt=""
+                className="absolute pointer-events-none w-[105%] md:w-[68%]"
+                style={{ left: "50%", top: "50%", transform: "translate(-50%, -50%)", height: "auto" }}
+            />
+            <SectionStars variant={3} />
+            <div className="max-w-300 mx-auto px-5 sm:px-6 relative z-10">
                 {/* Section Header */}
-                <FadeInUp>
+                <TextReveal>
                     <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 mb-8 md:mb-12">
                         <h2 className="font-anton text-[40px] md:text-[60px] text-primary uppercase leading-none">
                             KARYA
@@ -50,7 +59,7 @@ export default function Karya() {
                             <p className="text-[#333] text-base leading-relaxed mb-3">
                                 Intip berbagai mahakarya menakjubkan yang telah diciptakan oleh talenta-talenta kreatif MUDENG. Dari visual desain hingga antarmuka memukau, saksikan sendiri kualitas yang kami hasilkan!
                             </p>
-                            <button 
+                            <button
                                 onClick={(e) => {
                                     e.preventDefault();
                                     setIsAllKaryaOpen(true);
@@ -61,13 +70,13 @@ export default function Karya() {
                             </button>
                         </div>
                     </div>
-                </FadeInUp>
+                </TextReveal>
 
                 {/* Works Grid */}
                 <StaggerContainer className="flex flex-col md:flex-row gap-4 md:gap-5" staggerDelay={0.15}>
                     {/* Large card — left */}
                     <StaggerItem className="md:w-[52%]">
-                        <div 
+                        <div
                             onClick={() => setSelectedKarya(works[0])}
                             className="group relative rounded-2xl overflow-hidden cursor-pointer h-[360px] sm:h-125 md:h-188"
                         >
@@ -88,8 +97,8 @@ export default function Karya() {
                     {/* Right column — 2 small cards */}
                     <StaggerItem className="md:w-[48%] flex flex-col gap-4 md:gap-5">
                         {works.slice(1).map((work, i) => (
-                            <div 
-                                key={i} 
+                            <div
+                                key={i}
                                 onClick={() => setSelectedKarya(work)}
                                 className="group relative rounded-2xl overflow-hidden cursor-pointer h-[220px] sm:h-62.5 md:h-90"
                             >
@@ -110,18 +119,19 @@ export default function Karya() {
                 </StaggerContainer>
             </div>
 
+
             {/* Bottom divider */}
             <div className="max-w-[600px] mx-5 sm:mx-auto mt-10 md:mt-16">
                 <div className="h-px bg-accent" />
             </div>
 
-            <KaryaPopup 
+            <KaryaPopup
                 isOpen={!!selectedKarya}
                 onClose={() => setSelectedKarya(null)}
                 data={selectedKarya}
             />
-            
-            <AllKaryaPopup 
+
+            <AllKaryaPopup
                 isOpen={isAllKaryaOpen}
                 onClose={() => setIsAllKaryaOpen(false)}
                 works={works}

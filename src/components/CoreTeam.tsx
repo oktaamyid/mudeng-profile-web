@@ -1,4 +1,4 @@
-import { FadeInUp, Parallax, SlideIn } from "./motion";
+import { FadeInUp, Parallax, SlideIn, TextReveal, SectionStars } from "./motion";
 import teamPhoto1 from "../assets/team/team-photo-1.png";
 import teamPhoto2 from "../assets/team/team-photo-2.png";
 import teamPhoto3 from "../assets/team/team-photo-3.png";
@@ -65,9 +65,11 @@ export default function CoreTeam() {
         style={{ left: "-3%", top: "90%", width: "200px", height: "auto" }}
       />
 
+      <SectionStars variant={5} />
+
       <div className="max-w-[1200px] mx-auto px-5 sm:px-6 relative z-10">
         {/* Section Header */}
-        <FadeInUp>
+        <TextReveal>
           <div className="flex items-center justify-between mb-8 md:mb-16">
             <h2 className="font-anton text-[32px] sm:text-[40px] md:text-[60px] text-primary uppercase leading-none">
               CORE TEAM
@@ -76,7 +78,7 @@ export default function CoreTeam() {
               MUDENG
             </h2>
           </div>
-        </FadeInUp>
+        </TextReveal>
 
         {/* Content Rows */}
         <div className="space-y-12 md:space-y-16">
