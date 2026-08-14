@@ -1,4 +1,4 @@
-import { FadeInUp, Parallax, SlideIn, TextReveal, SectionStars } from "./motion";
+import { Parallax, SlideIn, TextReveal, SectionStars } from "./motion";
 import teamPhoto1 from "../assets/team/team-photo-1.png";
 import teamPhoto2 from "../assets/team/team-photo-2.png";
 import teamPhoto3 from "../assets/team/team-photo-3.png";

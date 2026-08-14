@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ArrowRight } from "lucide-react";
-import { FadeInUp, StaggerContainer, StaggerItem, TextReveal, SectionStars } from "./motion";
+import { StaggerContainer, StaggerItem, TextReveal, SectionStars } from "./motion";
 import karyaFuturisme from "../assets/karya/karya-1.png";
 import karyaMudengApp from "../assets/karya/karya-2.png";
 import karyaTypoVibe from "../assets/karya/karya-3.png";

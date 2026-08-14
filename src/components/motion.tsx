@@ -2,11 +2,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, type ReactNode } from "react";
 
 // Star imports for reuse across sections
-import star6 from "../assets/hero/star-6.png";
-import star25 from "../assets/hero/star-25.png";
-import star26 from "../assets/hero/star-26.png";
-import star31 from "../assets/hero/star-31.png";
-import star3 from "../assets/hero/3-star.png";
+
 import starBig10 from "../assets/hero/star-10-big.png";
 import starBig11 from "../assets/hero/star-11-big.png";
 

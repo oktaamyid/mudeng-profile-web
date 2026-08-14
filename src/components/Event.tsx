@@ -1,5 +1,5 @@
 import { ArrowRight } from "lucide-react";
-import { FadeInUp, StaggerContainer, StaggerItem, TextReveal, SectionStars } from "./motion";
+import { StaggerContainer, StaggerItem, TextReveal, SectionStars } from "./motion";
 import eventUICraft from "../assets/events/event-uicraft.png";
 import eventCrreativeCraft from "../assets/events/event-creativecraft.png";
 import eventMucrex from "../assets/events/event-mucrex.png";

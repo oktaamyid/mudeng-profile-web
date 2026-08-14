@@ -2,7 +2,7 @@ import iconSecured from "../assets/icons/icon-secured.svg";
 import iconFolder from "../assets/icons/icon-folder.svg";
 import iconRocket from "../assets/icons/icon-rocket.svg";
 import benefitBg from "../assets/benefit/benefit-bg.webp";
-import { FadeInUp, StaggerContainer, StaggerItem, TextReveal, SectionStars } from "./motion";
+import { StaggerContainer, StaggerItem, TextReveal, SectionStars } from "./motion";
 
 const benefits = [
   {

@@ -22,7 +22,7 @@ const float = (yRange: number, duration: number, delay: number = 0) => ({
       duration,
       repeat: Infinity,
       repeatType: "loop" as const,
-      ease: "easeInOut",
+      ease: "easeInOut" as const,
       delay,
     },
   },
