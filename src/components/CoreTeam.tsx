@@ -80,46 +80,66 @@ export default function CoreTeam() {
           </div>
         </TextReveal>
 
-        {/* Content Rows */}
-        <div className="space-y-12 md:space-y-16">
-          {sections.map((section, i) => (
-            <SlideIn
-              key={i}
-              direction={section.imagePosition === "left" ? "left" : "right"}
-              delay={i * 0.1}
-            >
-              <div
+        {/* Content Rows inside ONE Glass Panel */}
+        <div className="relative rounded-2xl p-5 sm:p-6 md:p-12 overflow-visible mt-4">
+          {/* Glass backdrop */}
+          <div
+            className="absolute inset-0 rounded-2xl -z-1"
+            style={{
+              background: "linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.15) 100%)",
+              backdropFilter: "blur(20px)",
+              WebkitBackdropFilter: "blur(20px)",
+              boxShadow: "0 20px 60px rgba(79,55,179,0.08), inset 0 1px 0 rgba(255,255,255,0.6)",
+              border: "1px solid rgba(200,190,230,0.4)",
+            }}
+          />
+
+          <div className="relative z-10 space-y-16 md:space-y-24">
+            {sections.map((section, i) => (
+              <SlideIn
                 key={i}
-                className={`flex flex-col md:flex-row gap-6 md:gap-8 items-center ${
-                  section.imagePosition === "right" ? "md:flex-row-reverse" : ""
-                }`}
+                direction={section.imagePosition === "left" ? "left" : "right"}
+                delay={i * 0.1}
               >
-                {/* Image */}
-                <div className="md:w-1/2 rounded-2xl overflow-hidden">
-                  <img
-                    src={section.image}
-                    alt={section.title}
-                    className="w-full h-[280px] sm:h-[350px] md:h-[488px] object-cover"
-                  />
+                <div
+                  className={`flex flex-col md:flex-row gap-8 md:gap-16 items-center ${
+                    section.imagePosition === "right" ? "md:flex-row-reverse" : ""
+                  }`}
+                >
+                  {/* Image */}
+                  <div className="w-full md:w-1/2">
+                    <img
+                      src={section.image}
+                      alt={section.title}
+                      className="w-full h-[280px] sm:h-[350px] md:h-[400px] object-cover rounded-2xl shadow-sm"
+                    />
+                  </div>
+
+                  {/* Content */}
+                  <div className="w-full md:w-1/2">
+                    <h3 className="font-anton text-[32px] md:text-[40px] text-primary uppercase leading-tight mb-6">
+                      {section.title}
+                    </h3>
+                    <div className="space-y-4">
+                      {section.texts.map((text, j) => (
+                        <p
+                          key={j}
+                          className="text-gray-700 text-[15px] md:text-base leading-relaxed"
+                        >
+                          {text}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
                 </div>
 
-                {/* Content */}
-                <div className="md:w-1/2">
-                  <h3 className="text-4xl font-extrabold text-gray-900 mb-4">
-                    {section.title}
-                  </h3>
-                  {section.texts.map((text, j) => (
-                    <p
-                      key={j}
-                      className="text-gray-600 text-sm leading-relaxed mb-4"
-                    >
-                      {text}
-                    </p>
-                  ))}
-                </div>
-              </div>
-            </SlideIn>
-          ))}
+                {/* Divider (except last item) */}
+                {i !== sections.length - 1 && (
+                  <div className="w-full h-px bg-primary/10 mt-16 md:mt-24" />
+                )}
+              </SlideIn>
+            ))}
+          </div>
         </div>
       </div>
     </section>
