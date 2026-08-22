@@ -26,7 +26,8 @@ function App() {
 
   // Simple Manual Routing
   const currentPath = window.location.pathname;
-  if (currentPath === "/links" || currentPath === "/link") {
+  // Handle both with and without trailing slash
+  if (currentPath === "/links" || currentPath === "/links/" || currentPath === "/link") {
     return <Portal />;
   }
 
