@@ -11,6 +11,7 @@ import CoreTeam from "./components/CoreTeam";
 import Footer from "./components/Footer";
 import Loader from "./components/Loader";
 import Portal from "./components/Portal";
+import Mascot from "./components/Mascot";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -48,6 +49,7 @@ function App() {
         <CoreTeam />
         <Footer />
       </div>
+      <Mascot />
     </>
   );
 }
